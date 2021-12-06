@@ -8,16 +8,10 @@
     android:layout_height="wrap_content"
     >
 
-    <ImageView
-        app:layout_anchor="@+id/constraintTotal"
-        android:id="@+id/imageViewWarning"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/b"
-        app:layout_anchorGravity="top|center" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:paddingTop="50dp"
+        android:background="#93DAE3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,8 +91,16 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/buttonCancel"
                     app:layout_constraintTop_toTopOf="parent" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:elevation="5dp"
+        app:layout_anchor="@+id/constraintTotal"
+        android:id="@+id/imageViewWarning"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/b"
+        app:layout_anchorGravity="top|center" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

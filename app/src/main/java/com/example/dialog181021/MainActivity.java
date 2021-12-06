@@ -55,39 +55,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         buttonCustomAlertDialog.setOnClickListener(new View.OnClickListener() {
+            //dialog_cofirm.xml
             @Override
             public void onClick(View view) {
-                showCustomDialog_b();
-            }
+                AppDialog.setDialogConfirm(MainActivity.this, new OnListenerConfirmDialog() {
+                    @Override
+                    public void onDelete() {
+                        Toast.makeText(MainActivity.this, "Delete", Toast.LENGTH_SHORT).show();
+                    }
 
+                    @Override
+                    public void onCancel() {
+                        Toast.makeText(MainActivity.this,"Cancel",Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
         });
 
-    }
-    public void showCustomDialog_b(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this,R.style.Theme_AppCompat_DayNight_Dialog);
-        View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.dialog_confirm_b,findViewById(R.id.layoutDialogContainer));
-        builder.setView(view);
-       Button btnDone = view.findViewById(R.id.buttonDone);
-       Button btnCancel = view.findViewById(R.id.buttonCancel);
-       AlertDialog alertDialog = builder.create();
-       btnDone.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_SHORT).show();
-               alertDialog.dismiss();
-           }
-       });
-       btnCancel.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               Toast.makeText(MainActivity.this, "Cancel", Toast.LENGTH_SHORT).show();
-               alertDialog.dismiss();
-           }
-       });
-        alertDialog.show();
-//        Dialog dialog = new Dialog(this);
-//        dialog.setContentView(R.layout.dialog_confirm_b);
-//        Button btnDone = dialog.findViewById(R.id.buttonDone);
-//        Button btnCancel = dialog.findViewById(R.id.buttonCancel);
+
+
+//        buttonCustomAlertDialog.setOnClickListener(new View.OnClickListener() {
+//        //dialog_confirm_b.xml
+//            @Override
+//            public void onClick(View view) {
+//                AppDialogB.showCustomDialog_b(MainActivity.this, new OnListenerCofirmDialogB() {
+//                    @Override
+//                    public void onDone() {
+//                        Toast.makeText(MainActivity.this, "Done!!", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onCancel() {
+//                        Toast.makeText(MainActivity.this, "Cancel!!", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//            }
+//
+//        });
     }
 }
